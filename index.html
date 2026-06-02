@@ -260,6 +260,103 @@
       background: rgba(6,9,16,0.95);
     }
 
+    /* Teachable Machine card — animated scan-line shimmer */
+    .tm-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .tm-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        transparent 40%,
+        rgba(99,102,241,0.07) 50%,
+        transparent 60%
+      );
+      background-size: 200% 100%;
+      animation: shimmer-scan 4s linear infinite;
+      pointer-events: none;
+      border-radius: 16px;
+    }
+    @keyframes shimmer-scan {
+      0%   { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* Architecture detail list */
+    .arch-list li {
+      position: relative;
+      padding-left: 18px;
+      color: #64748b;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .arch-list li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #6366f1;
+      font-size: 10px;
+      top: 3px;
+    }
+
+    /* Pill badge for SMIT label */
+    .smit-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(168,85,247,0.15));
+      border: 1px solid rgba(99,102,241,0.45);
+      color: #a5b4fc;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.03em;
+    }
+    .smit-badge .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #818cf8;
+      animation: pulse-dot 2s ease-out infinite;
+    }
+
+    /* Action button pair for project cards */
+    .proj-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid;
+    }
+    .proj-btn-outline {
+      border-color: rgba(255,255,255,0.12);
+      color: #94a3b8;
+      background: transparent;
+    }
+    .proj-btn-outline:hover {
+      border-color: rgba(99,102,241,0.5);
+      color: #a5b4fc;
+      background: rgba(99,102,241,0.08);
+    }
+    .proj-btn-solid {
+      border-color: rgba(99,102,241,0.4);
+      color: #e0e7ff;
+      background: linear-gradient(135deg, rgba(99,102,241,0.25), rgba(168,85,247,0.15));
+    }
+    .proj-btn-solid:hover {
+      border-color: rgba(99,102,241,0.7);
+      background: linear-gradient(135deg, rgba(99,102,241,0.4), rgba(168,85,247,0.25));
+      transform: translateY(-1px);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
@@ -347,7 +444,7 @@
           </h1>
 
           <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-lg">
-            I turn data into action — from Vision-Language Models for satellite imagery to scalable backend architecture.
+            I turn data into action, from Vision-Language Models for satellite imagery to scalable backend architecture.
             Currently in the <strong class="text-slate-200">10Pearls FYP Accelerator</strong>.
           </p>
 
@@ -395,7 +492,7 @@
           <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// ABOUT ME</p>
           <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-6">Architecture<br>meets <span class="text-purple-400">Execution.</span></h2>
           <p class="text-slate-400 text-lg leading-relaxed mb-6">
-            I'm a builder at heart — whether training robust LLMs, architecting scalable backend systems, or leading national youth initiatives. My goal is always the same: engineering solutions that solve real problems.
+            I'm a builder at heart, whether training robust LLMs, architecting scalable backend systems, or leading national youth initiatives. My goal is always the same: engineering solutions that solve real problems.
           </p>
           <p class="text-slate-400 leading-relaxed mb-8">
             From rapid prototyping to production-grade deployments, I write clean, maintainable systems that scale. I bridge high-volume technical execution with strategic leadership.
@@ -490,7 +587,7 @@
             <i data-lucide="code-2" class="w-6 h-6 text-green-400" aria-hidden="true"></i>
           </div>
           <h3 class="syne text-white font-bold text-xl mb-3">Web Scraping</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Automated data extraction from any website. Product prices, leads, news, job listings — delivered clean and structured.</p>
+          <p class="text-slate-500 text-sm leading-relaxed mb-4">Automated data extraction from any website. Product prices, leads, news, job listings, delivered clean and structured.</p>
           <div class="flex flex-wrap gap-2">
             <span class="tag">BeautifulSoup</span>
             <span class="tag">Scrapy</span>
@@ -542,17 +639,18 @@
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- ===================== PROJECTS ===================== -->
     <section id="projects" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="Featured Projects">
       <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// FEATURED WORK</p>
       <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-12">Featured <span class="text-purple-400">Engineering.</span></h2>
 
-      <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Row 1: Hero satellite card (2 cols) + Tech Portfolio card (1 col) -->
+      <div class="grid lg:grid-cols-3 gap-6 mb-6">
 
-        <!-- Project 1 -->
+        <!-- Project 1 — Vision-Language Model (hero, 2-col) -->
         <div class="glow-card p-8 lg:col-span-2 flex flex-col justify-between" style="min-height: 300px;">
           <div>
-            <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
               <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 mono text-xs border border-cyan-800/40">
                 <i data-lucide="award" class="w-3.5 h-3.5" aria-hidden="true"></i> 10Pearls FYP Accelerator
               </span>
@@ -562,7 +660,7 @@
             <p class="text-slate-400 leading-relaxed mb-8">
               Advanced ML system combining large language models with computer vision to analyze satellite imagery.
               Real-time insights for earth observation, environmental monitoring, and geospatial analysis.
-              Selected for the elite 10Pearls accelerator — production-ready architecture at scale.
+              Selected for the elite 10Pearls accelerator, production-ready architecture at scale.
             </p>
           </div>
           <div class="flex flex-wrap gap-2">
@@ -573,7 +671,7 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2 — Tech Portfolio Architect (1 col) -->
         <div class="glow-card p-8 flex flex-col justify-between">
           <div>
             <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 mono text-xs border border-purple-800/40 mb-6 block w-fit">
@@ -595,43 +693,80 @@
           </div>
         </div>
 
-        <!-- Project 3 — Color Palette Generator -->
-        <div class="glow-card p-8 flex flex-col justify-between">
+      </div>
+
+      <!-- Row 2: Custom Teachable Machine (2 col) + GitHub CTA (1 col) -->
+      <div class="grid lg:grid-cols-3 gap-6">
+
+        <!-- Project 3 — Custom Teachable Machine (2-col, premium) -->
+        <div class="glow-card tm-card p-8 lg:col-span-2 flex flex-col justify-between"
+             style="min-height:340px; border-color: rgba(99,102,241,0.35); background: linear-gradient(145deg, #0d1117 60%, rgba(99,102,241,0.06));">
           <div>
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-900/30 text-green-400 mono text-xs border border-green-800/40 mb-6 block w-fit">
-              Live on Vercel
-            </span>
-            <h3 class="syne text-white font-bold text-xl mb-4">Color Palette Generator</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              A tool for designers and developers to generate, explore, and export beautiful color palettes instantly. Clean UI with real-time preview.
-            </p>
-          </div>
-          <div class="space-y-4">
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">JavaScript</span>
-              <span class="tag">CSS</span>
-              <span class="tag">Vercel</span>
+            <!-- Header row -->
+            <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
+              <span class="smit-badge">
+                <span class="dot"></span>
+                SMIT AI Internship Project
+              </span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.3); color:#818cf8;">Full-Stack ML</span>
             </div>
-            <a href="https://color-palette-generator-two.vercel.app/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 mono text-sm transition-colors">
-              Live Demo <i data-lucide="external-link" class="w-4 h-4" aria-hidden="true"></i>
-            </a>
+
+            <!-- Title block -->
+            <h3 class="syne text-white font-bold text-2xl md:text-3xl mb-1 leading-tight">Custom Teachable Machine</h3>
+            <p class="mono text-xs text-indigo-400 mb-5 tracking-wide">A Decoupled Client-Server Framework for Browser-Based Transfer Learning</p>
+
+            <!-- Architecture detail list -->
+            <ul class="arch-list space-y-0.5 mb-7">
+              <li>Lightweight <strong class="text-slate-400">Streamlit</strong> presentation client with custom CSS & responsive Altair visualizations, fully isolated from compute.</li>
+              <li>Production-grade <strong class="text-slate-400">FastAPI</strong> server container with embedded <strong class="text-slate-400">PyTorch MobileNetV3</strong> backbone as structural feature extractor.</li>
+              <li>Real-time classifier training on CPU via optimized <strong class="text-slate-400">Scikit-Learn Logistic Regression</strong> heads.</li>
+              <li>Live validation accuracy matrix via automated <strong class="text-slate-400">80/20 train-test split</strong>.</li>
+            </ul>
+          </div>
+
+          <!-- Footer: tags + action buttons -->
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+            <div class="flex flex-wrap gap-2">
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">FastAPI</span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Streamlit</span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Docker</span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">PyTorch (MobileNetV3)</span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Scikit-Learn</span>
+              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Hugging Face Spaces</span>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <a href="https://github.com/Asadullah-Dogar/custom-teachable-machine"
+                 target="_blank" rel="noopener noreferrer"
+                 class="proj-btn proj-btn-outline">
+                <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                View Source
+              </a>
+              <a href="https://custom-teachable-machine.streamlit.app/"
+                 target="_blank" rel="noopener noreferrer"
+                 class="proj-btn proj-btn-solid">
+                <i data-lucide="external-link" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                Launch App
+              </a>
+            </div>
           </div>
         </div>
 
-        <!-- More on GitHub -->
-        <div class="glow-card p-8 lg:col-span-2 flex items-center justify-between gap-6" style="background: linear-gradient(135deg, rgba(168,85,247,0.05), rgba(34,211,238,0.03));">
+        <!-- GitHub CTA (1 col) -->
+        <div class="glow-card p-8 flex flex-col items-start justify-between gap-6"
+             style="background: linear-gradient(135deg, rgba(168,85,247,0.05), rgba(34,211,238,0.03));">
           <div>
             <p class="mono text-xs text-slate-500 mb-2 tracking-wider">// MORE WORK</p>
             <h3 class="syne text-white font-bold text-2xl mb-2">See all projects on GitHub</h3>
-            <p class="text-slate-400 text-sm">Microservices, ML experiments, data pipelines, and more.</p>
+            <p class="text-slate-400 text-sm leading-relaxed">Microservices, ML experiments, data pipelines, and more open-source work.</p>
           </div>
-          <a href="https://github.com/Asadullah-Dogar" target="_blank" rel="noopener noreferrer" class="btn-secondary shrink-0">
+          <a href="https://github.com/Asadullah-Dogar" target="_blank" rel="noopener noreferrer" class="btn-secondary">
             <i class="fab fa-github text-base" aria-hidden="true"></i> GitHub
           </a>
         </div>
 
       </div>
     </section>
+    <!-- ===================== END PROJECTS ===================== -->
 
     <!-- BUILDER GRID -->
     <section id="volume" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="Project Volume">
@@ -641,7 +776,7 @@
             <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// CONSISTENCY</p>
             <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-3">Project <span class="text-cyan-400">Activity.</span></h2>
             <p class="text-slate-400 max-w-lg text-sm leading-relaxed">
-              A visual snapshot of my coding consistency — Python and AI-driven projects ranging from microservices to model deployments.
+              A visual snapshot of my coding consistency, Python and AI-driven projects ranging from microservices to model deployments.
             </p>
           </div>
           <div class="flex items-center gap-2 mono text-xs text-slate-500 shrink-0">
