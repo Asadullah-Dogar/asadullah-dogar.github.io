@@ -557,9 +557,9 @@
       <a href="#about" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">About</a>
       <a href="#services" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Services</a>
       <a href="#projects" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Projects</a>
-      <a href="#volume" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Volume</a>
       <a href="#certifications"
         class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Certifications</a>
+      <a href="#experience" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Experience</a>
       <a href="#leadership" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Leadership</a>
       <a href="#contact" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Contact</a>
       <a href="#contact" class="btn-primary self-start">Hire Me</a>
@@ -842,36 +842,40 @@
           </div>
         </div>
 
-        <!-- Project 2 — Tech Portfolio Architect (1 col) -->
-        <div class="glow-card p-8 flex flex-col justify-between">
+        <!-- Project 2 — Local Docker RAG Assistant (1 col) -->
+        <div class="glow-card tm-card p-8 flex flex-col justify-between"
+          style="border-color: rgba(34,211,238,0.3); background: linear-gradient(145deg, #0d1117 60%, rgba(34,211,238,0.04));">
           <div>
             <span
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 mono text-xs border border-purple-800/40 mb-6 block w-fit">
-              Built on AWS
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 mono text-xs border border-cyan-800/40 mb-6 block w-fit">
+              <i data-lucide="cpu" class="w-3.5 h-3.5" aria-hidden="true"></i> Fully Local , Air-Gapped
             </span>
-            <h3 class="syne text-white font-bold text-xl mb-4">Tech Portfolio Architect</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">
-              Intelligent AWS PartyRock app powered by generative AI. Constructs and optimizes technical portfolios for
-              developers with agentic workflows.
+            <h3 class="syne text-white font-bold text-xl mb-1 leading-tight">Local Docker RAG Assistant</h3>
+            <p class="mono text-xs text-cyan-400 mb-4 tracking-wide">Zero-hallucination QA over Docker docs</p>
+            <p class="text-slate-400 text-sm leading-relaxed mb-5">
+              A fully local, zero-hallucination chatbot over verified Docker documentation. Built with Streamlit,
+              LlamaIndex, ChromaDB, and Ollama, no cloud APIs, no data leaves your machine.
             </p>
           </div>
           <div class="space-y-4">
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">AWS PartyRock</span>
-              <span class="tag">Agentic AI</span>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Streamlit 1.36</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">LlamaIndex 0.10</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">ChromaDB</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Ollama (llama3.2:1b)</span>
             </div>
-            <a href="https://partyrock.aws/u/asadullahdogar/W8r0lfWxE/Tech-Portfolio-Architect" target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 mono text-sm transition-colors">
-              Explore App <i data-lucide="external-link" class="w-4 h-4" aria-hidden="true"></i>
+            <a href="https://github.com/Asadullah-Dogar/docker-rag-assistant" target="_blank" rel="noopener noreferrer"
+              class="proj-btn proj-btn-outline">
+              <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
+              View Source
             </a>
           </div>
         </div>
 
       </div>
 
-      <!-- Row 2: Custom Teachable Machine (2 col) + GitHub CTA (1 col) -->
-      <div class="grid lg:grid-cols-3 gap-6">
+      <!-- Row 2: Custom Teachable Machine (2 col) + Docker RAG (1 col) -->
+      <div class="grid lg:grid-cols-3 gap-6 mb-6">
 
         <!-- Project 3 — Custom Teachable Machine (2-col, premium) -->
         <div class="glow-card tm-card p-8 lg:col-span-2 flex flex-col justify-between"
@@ -945,41 +949,115 @@
         </div>
 
       </div>
+
+      <!-- Row 3: Docker RAG Assistant (2 col) + Features (1 col) -->
+      <div class="grid lg:grid-cols-3 gap-6">
+
+        <!-- Project 4 — Local Docker RAG Assistant (2-col, premium) -->
+        <div class="glow-card tm-card p-8 lg:col-span-2 flex flex-col justify-between"
+          style="min-height:340px; border-color: rgba(34,211,238,0.35); background: linear-gradient(145deg, #0d1117 60%, rgba(34,211,238,0.06));">
+          <div>
+            <!-- Header row -->
+            <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mono text-xs border"
+                style="background: rgba(34,211,238,0.1); border-color: rgba(34,211,238,0.35); color:#67e8f9;">
+                <i data-lucide="cpu" class="w-3.5 h-3.5" aria-hidden="true"></i> Fully Local , Air-Gapped
+              </span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.3); color:#67e8f9;">RAG System</span>
+            </div>
+
+            <!-- Title block -->
+            <h3 class="syne text-white font-bold text-2xl md:text-3xl mb-1 leading-tight">Local Docker RAG Assistant
+            </h3>
+            <p class="mono text-xs text-cyan-400 mb-5 tracking-wide">Zero-hallucination QA over verified Docker
+              documentation, no cloud APIs, no data leaves your machine</p>
+
+            <!-- Feature list -->
+            <ul class="arch-list space-y-1 mb-7">
+              <li>Zero-hallucination , answers bounded strictly to <strong class="text-slate-400">340 verified Docker
+                  doc chunks</strong></li>
+              <li>Fully local &amp; air-gapped , <strong class="text-slate-400">ChromaDB</strong>, embeddings, and LLM
+                all run on-device</li>
+              <li>CPU-optimized , tuned context window and chunk sizes for fast inference without a GPU</li>
+              <li>Streaming responses , token-by-token output via <strong
+                  class="text-slate-400">st.write_stream</strong></li>
+              <li>Source citations , every answer shows which doc chunks were used</li>
+            </ul>
+          </div>
+
+          <!-- Footer: badge grid + action buttons -->
+          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
+            <div class="flex flex-wrap gap-2">
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Streamlit 1.36</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">LlamaIndex 0.10</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">ChromaDB (local
+                persistent)</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">BAAI/bge-large-en-v1.5</span>
+              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Ollama (llama3.2:1b)</span>
+            </div>
+            <div class="flex items-center gap-3 shrink-0">
+              <a href="https://github.com/Asadullah-Dogar/docker-rag-assistant" target="_blank"
+                rel="noopener noreferrer" class="proj-btn proj-btn-outline">
+                <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                View Source
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RAG Feature highlights (1 col) -->
+        <div class="glow-card p-8 flex flex-col gap-5"
+          style="background: linear-gradient(135deg, rgba(34,211,238,0.04), rgba(168,85,247,0.03));">
+          <p class="mono text-xs text-cyan-400 tracking-wider">// TECH STACK BREAKDOWN</p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="layout" class="w-4 h-4 text-cyan-400" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="syne text-white font-bold text-sm">UI</p>
+                <p class="text-slate-500 text-xs mono">Streamlit 1.36</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="git-merge" class="w-4 h-4 text-purple-400" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="syne text-white font-bold text-sm">RAG Framework</p>
+                <p class="text-slate-500 text-xs mono">LlamaIndex 0.10</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="database" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="syne text-white font-bold text-sm">Vector Store</p>
+                <p class="text-slate-500 text-xs mono">ChromaDB (local persistent)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center shrink-0 mt-0.5">
+                <i data-lucide="cpu" class="w-4 h-4 text-indigo-400" aria-hidden="true"></i>
+              </div>
+              <div>
+                <p class="syne text-white font-bold text-sm">LLM Runtime</p>
+                <p class="text-slate-500 text-xs mono">Ollama (llama3.2:1b)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
     <!-- ===================== END PROJECTS ===================== -->
 
-    <!-- BUILDER GRID -->
-    <section id="volume" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="Project Volume">
-      <div class="glow-card p-8 md:p-12">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 gap-6">
-          <div>
-            <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// CONSISTENCY</p>
-            <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-3">Project <span
-                class="text-cyan-400">Activity.</span></h2>
-            <p class="text-slate-400 max-w-lg text-sm leading-relaxed">
-              A visual snapshot of my coding consistency, Python and AI-driven projects ranging from microservices to
-              model deployments.
-            </p>
-          </div>
-          <div class="flex items-center gap-2 mono text-xs text-slate-500 shrink-0">
-            <span>Less</span>
-            <div class="w-3 h-3 rounded-sm bg-slate-800"></div>
-            <div class="w-3 h-3 rounded-sm bg-purple-900/60"></div>
-            <div class="w-3 h-3 rounded-sm bg-purple-700/80"></div>
-            <div class="w-3 h-3 rounded-sm bg-purple-500"></div>
-            <div class="w-3 h-3 rounded-sm bg-cyan-400"></div>
-            <span>More</span>
-          </div>
-        </div>
-        <div class="overflow-x-auto pb-4">
-          <div id="builder-grid" class="grid grid-rows-7 grid-flow-col gap-1.5 min-w-max"></div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CERTIFICATIONS & LEADERSHIP -->
+
+    <!-- CERTIFICATIONS, EXPERIENCE & LEADERSHIP -->
     <section id="certifications" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region"
-      aria-label="Certifications and Leadership">
+      aria-label="Certifications, Experience, and Leadership">
       <div class="grid lg:grid-cols-2 gap-16">
 
         <!-- Certs -->
@@ -1024,59 +1102,98 @@
           </div>
         </div>
 
-        <!-- Leadership -->
-        <div id="leadership">
-          <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// IMPACT</p>
-          <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Leadership.</h2>
+        <!-- Experience + Leadership stacked in right column -->
+        <div class="space-y-16">
 
-          <div class="relative pl-8 border-l border-slate-800">
+          <!-- ===== EXPERIENCE ===== -->
+          <div id="experience">
+            <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// EXPERIENCE</p>
+            <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Experience.</h2>
 
-            <!-- Entry 1: NYLP Head of Karachi -->
-            <div class="relative mb-12">
-              <div class="timeline-dot absolute -left-[41px] top-1"></div>
-              <span class="mono text-xs text-cyan-400 tracking-wider mb-2 block">2024 – PRESENT</span>
-              <h4 class="syne text-white font-bold text-xl mb-1">Head of Karachi Region &amp; Program Lead</h4>
-              <p class="text-purple-400 mono text-sm mb-4">National Youth Leadership Program (NYLP)</p>
-              <p class="text-slate-400 text-sm leading-relaxed">
-                Driving social impact across Pakistan's largest city. I bridge technology and community development,
-                representing Karachi at national seminars and diplomatic exchanges. Creating ecosystems for youth
-                empowerment and Web3 integration.
-              </p>
-            </div>
+            <div class="relative pl-8 border-l border-slate-800">
 
-            <!-- Entry 2: Adaption Labs Ambassador (Inaugural Cohort) — UPDATED -->
-            <div class="relative mb-12">
-              <div class="absolute w-3 h-3 rounded-full -left-[40px] top-1"
-                style="background: var(--cyan); box-shadow: 0 0 0 0 rgba(34,211,238,0.5); animation: pulse-dot 2.5s ease-out infinite;">
+              <!-- AI Intern at SMIT -->
+              <div class="relative mb-4">
+                <div class="timeline-dot absolute -left-[41px] top-1"></div>
+                <span class="mono text-xs text-purple-400 tracking-wider mb-2 block">MAY 2026 – PRESENT · 2 MOS ·
+                  ON-SITE</span>
+                <h4 class="syne text-white font-bold text-xl mb-0.5">Artificial Intelligence Intern</h4>
+                <p class="text-purple-400 mono text-sm mb-1">S.M.I.T (Saylani Mass I.T Training) , Internship</p>
+                <p class="mono text-xs text-slate-600 mb-4">Karachi Division, Sindh, Pakistan</p>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                  Engaged in an intensive technical incubator track focused on building secure application architectures
+                  and optimizing real-time machine learning pipelines.
+                </p>
+                <ul class="leadership-bullets space-y-3">
+                  <li>
+                    <strong class="text-slate-300">Vision Pipeline Engineering:</strong> Developed high-velocity vision
+                    microservices mapping deep feature extractions from
+                    MobileNetV3 to optimized Scikit-Learn Logistic Regression classifiers, enabling rapid inference
+                    streams
+                    from web camera feeds without relying on GPU infrastructure.
+                  </li>
+                  <li>
+                    <strong class="text-slate-300">Asynchronous Software Architecture:</strong> Built robust, fully
+                    async backend foundations utilizing FastAPI,
+                    handling non-blocking database layers and implementing cryptographic token revocation via an async
+                    Redis caching layer.
+                  </li>
+                  <li>
+                    <strong class="text-slate-300">Incubator Collaboration:</strong> Collaborated closely with
+                    engineering leads to transition conceptual
+                    architectures into structured, production-grade logic while maintaining strict quality gates.
+                  </li>
+                </ul>
               </div>
-              <span class="mono text-xs text-cyan-400 tracking-wider mb-2 block">MAY 2026 – PRESENT</span>
-              <h4 class="syne text-white font-bold text-xl mb-1">Adaption Labs Ambassador <span
-                  class="mono text-sm text-slate-500 font-normal">(Inaugural Cohort)</span></h4>
-              <p class="text-purple-400 mono text-sm mb-4">Adaption Labs · Remote / Karachi, Pakistan</p>
-              <ul class="leadership-bullets space-y-2">
-                <li>Selected as one of less than 5% of global applicants to the inaugural ambassador cohort to champion
-                  the mission of shifting developers from static paradigms toward adaptive, real-time AI systems.</li>
-                <li>Spearheaded a localized AI builder ecosystem oriented around hands-on, open-source model
-                  development, actively steering participants away from static API wrapper dependency and toward direct
-                  engagement with model internals, efficiency optimization, and collaborative ML engineering.</li>
-                <li>Scaled community technical depth by designing regional meetups, hackathons, and structured workshops
-                  covering PyTorch, transfer learning pipelines, and agentic system architectures.</li>
-              </ul>
-            </div>
 
-            <!-- Entry 3: Global Web3 & Diplomatic Exchanges -->
-            <div class="relative opacity-60">
-              <div class="absolute w-3 h-3 rounded-full bg-slate-600 -left-[40px] top-1"></div>
-              <span class="mono text-xs text-slate-500 tracking-wider mb-2 block">INTERNATIONAL</span>
-              <h4 class="syne text-white font-semibold text-lg mb-1">Global Web3 &amp; Diplomatic Exchanges</h4>
-              <p class="text-slate-500 mono text-sm mb-4">Various International Forums</p>
-              <p class="text-slate-500 text-sm leading-relaxed">
-                Shaping dialogues around decentralized systems and international technical collaboration. Engaging
-                stakeholders to drive innovation and technological adoption.
-              </p>
             </div>
-
           </div>
+
+          <!-- ===== LEADERSHIP ===== -->
+          <div id="leadership">
+            <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// IMPACT</p>
+            <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Leadership.</h2>
+
+            <div class="relative pl-8 border-l border-slate-800">
+
+              <!-- Entry 1: Adaption Labs Ambassador (Inaugural Cohort) -->
+              <div class="relative mb-12">
+                <div class="absolute w-3 h-3 rounded-full -left-[40px] top-1"
+                  style="background: var(--cyan); box-shadow: 0 0 0 0 rgba(34,211,238,0.5); animation: pulse-dot 2.5s ease-out infinite;">
+                </div>
+                <span class="mono text-xs text-cyan-400 tracking-wider mb-2 block">MAY 2026 – PRESENT</span>
+                <h4 class="syne text-white font-bold text-xl mb-1">Adaption Labs Ambassador <span
+                    class="mono text-sm text-slate-500 font-normal">(Inaugural Cohort)</span></h4>
+                <p class="text-purple-400 mono text-sm mb-4">Adaption Labs · Remote / Karachi, Pakistan</p>
+                <ul class="leadership-bullets space-y-2">
+                  <li>Selected as one of less than 5% of global applicants to the inaugural ambassador cohort to
+                    champion
+                    the mission of shifting developers from static paradigms toward adaptive, real-time AI systems.</li>
+                  <li>Spearheaded a localized AI builder ecosystem oriented around hands-on, open-source model
+                    development, actively steering participants away from static API wrapper dependency and toward
+                    direct
+                    engagement with model internals, efficiency optimization, and collaborative ML engineering.</li>
+                  <li>Scaled community technical depth by designing regional meetups, hackathons, and structured
+                    workshops
+                    covering PyTorch, transfer learning pipelines, and agentic system architectures.</li>
+                </ul>
+              </div>
+
+              <!-- Entry 2: Global Web3 & Diplomatic Exchanges -->
+              <div class="relative opacity-60">
+                <div class="absolute w-3 h-3 rounded-full bg-slate-600 -left-[40px] top-1"></div>
+                <span class="mono text-xs text-slate-500 tracking-wider mb-2 block">INTERNATIONAL</span>
+                <h4 class="syne text-white font-semibold text-lg mb-1">Global Web3 &amp; Diplomatic Exchanges</h4>
+                <p class="text-slate-500 mono text-sm mb-4">Various International Forums</p>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                  Shaping dialogues around decentralized systems and international technical collaboration. Engaging
+                  stakeholders to drive innovation and technological adoption.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -1213,32 +1330,7 @@
     // Automated year counter
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Builder grid
-    (function () {
-      const grid = document.getElementById('builder-grid');
-      const levels = [0, 1, 2, 3, 4];
-      const colors = [
-        'bg-slate-800',
-        'bg-purple-900/60',
-        'bg-purple-700/80',
-        'bg-purple-500',
-        'bg-cyan-400'
-      ];
-      const weeks = 52;
-      const days = 7;
-      // Seed a deterministic-ish pattern
-      const seed = [3, 1, 0, 2, 4, 1, 0, 3, 2, 1, 4, 0, 1, 3, 2, 0, 4, 1, 2, 3, 0, 1, 4, 2, 3, 1, 0, 2, 4, 3, 1, 0, 2, 1, 3, 4, 0, 2, 1, 3, 4, 0, 1, 2, 3, 4, 1, 0, 3, 2, 4];
-      for (let d = 0; d < days; d++) {
-        for (let w = 0; w < weeks; w++) {
-          const idx = (w * days + d) % seed.length;
-          const lvl = seed[idx];
-          const cell = document.createElement('div');
-          cell.className = `w-3 h-3 rounded-sm ${colors[lvl]} transition-opacity hover:opacity-80`;
-          cell.title = `Week ${w + 1}, Day ${d + 1}: Level ${lvl}`;
-          grid.appendChild(cell);
-        }
-      }
-    })();
+    // Builder grid removed (section deleted)
 
     // Certifications data
     const certs = [
