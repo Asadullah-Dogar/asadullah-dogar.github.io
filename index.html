@@ -48,22 +48,16 @@
             scroll-padding-top: 5rem;
         }
 
-        body {
-            background-color: theme('colors.base');
-            color: #a1a1aa;
-            -webkit-font-smoothing: antialiased;
-        }
-
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: theme('colors.base'); }
-        ::-webkit-scrollbar-thumb { background: theme('colors.border'); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: theme('colors.accent.violet'); }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #8b5cf6; }
 
         /* Dot Grid Background */
         .bg-grid {
             background-size: 32px 32px;
-            background-image: radial-gradient(circle, theme('colors.border') 1px, transparent 1px);
+            background-image: radial-gradient(circle, #27272a 1px, transparent 1px);
             mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
         }
@@ -72,7 +66,7 @@
         .bento-card {
             background: rgba(18, 18, 18, 0.6);
             backdrop-filter: blur(12px);
-            border: 1px solid theme('colors.border');
+            border: 1px solid #27272a;
             border-radius: 1rem;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
@@ -105,8 +99,8 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.7rem;
             font-weight: 500;
-            background: theme('colors.surface');
-            border: 1px solid theme('colors.border');
+            background: #121212;
+            border: 1px solid #27272a;
             color: #d4d4d8;
         }
 
@@ -116,8 +110,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .grad-violet-cyan { background-image: linear-gradient(to right, theme('colors.accent.violet'), theme('colors.accent.cyan')); }
-        .grad-emerald-cyan { background-image: linear-gradient(to right, theme('colors.accent.emerald'), theme('colors.accent.cyan')); }
+        .grad-violet-cyan { background-image: linear-gradient(to right, #8b5cf6, #06b6d4); }
+        .grad-emerald-cyan { background-image: linear-gradient(to right, #10b981, #06b6d4); }
 
         /* Reveal Animation */
         .reveal {
@@ -131,7 +125,7 @@
         }
     </style>
 </head>
-<body class="relative min-h-screen selection:bg-accent-violet selection:text-white">
+<body class="bg-[#0a0a0a] text-[#a1a1aa] antialiased relative min-h-screen selection:bg-accent-violet selection:text-white">
 
     <!-- Background Layer -->
     <div class="fixed inset-0 z-[-1] bg-grid opacity-30"></div>
