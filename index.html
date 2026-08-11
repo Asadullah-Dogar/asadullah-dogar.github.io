@@ -44,6 +44,10 @@
     </script>
 
     <style>
+        html {
+            scroll-padding-top: 5rem;
+        }
+
         body {
             background-color: theme('colors.base');
             color: #a1a1aa;
@@ -140,11 +144,25 @@
             <a href="#" class="font-display font-bold text-white text-xl tracking-tight">
                 ASAD<span class="text-accent-violet">.</span>
             </a>
+            
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 font-mono text-sm">
                 <a href="#experience" class="text-zinc-400 hover:text-white transition-colors">Experience</a>
                 <a href="#projects" class="text-zinc-400 hover:text-white transition-colors">Projects</a>
                 <a href="#contact" class="px-4 py-2 bg-white text-black font-semibold rounded-md hover:bg-zinc-200 transition-colors">Get in touch</a>
             </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white focus:outline-none" aria-label="Toggle navigation menu">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Panel -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-border/50 bg-base/95 backdrop-blur-md absolute w-full left-0 top-16 flex-col shadow-2xl">
+            <a href="#experience" class="mobile-link block px-6 py-4 text-sm font-mono text-zinc-400 hover:text-white hover:bg-surface border-b border-border/50">Experience</a>
+            <a href="#projects" class="mobile-link block px-6 py-4 text-sm font-mono text-zinc-400 hover:text-white hover:bg-surface border-b border-border/50">Projects</a>
+            <a href="#contact" class="mobile-link block px-6 py-4 text-sm font-mono text-accent-cyan hover:text-white hover:bg-surface">Get in touch</a>
         </div>
     </nav>
 
@@ -168,14 +186,14 @@
                 Formal Graduate in Artificial Intelligence. Specializing in decoupled ML pipelines, LoRA fine-tuning, ReAct agents, and high-throughput server architecture.
             </p>
 
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-4 flex-wrap">
                 <a href="#projects" class="px-6 py-3 bg-white text-black font-display font-semibold rounded-lg hover:bg-zinc-200 transition-colors flex items-center gap-2">
                     View Work <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
                 </a>
-                <a href="https://github.com/Asadullah-Dogar" target="_blank" class="p-3 border border-border rounded-lg text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors">
+                <a href="https://github.com/Asadullah-Dogar" target="_blank" aria-label="GitHub Profile" class="p-3 border border-border rounded-lg text-zinc-400 hover:text-white hover:border-zinc-600 transition-colors">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/asad-ullah-dogar/" target="_blank" class="p-3 border border-border rounded-lg text-zinc-400 hover:text-[#0a66c2] hover:border-[#0a66c2] transition-colors">
+                <a href="https://www.linkedin.com/in/asad-ullah-dogar/" target="_blank" aria-label="LinkedIn Profile" class="p-3 border border-border rounded-lg text-zinc-400 hover:text-[#0a66c2] hover:border-[#0a66c2] transition-colors">
                     <i class="fab fa-linkedin text-xl"></i>
                 </a>
             </div>
@@ -321,15 +339,16 @@
                                 <i data-lucide="github" class="w-4 h-4"></i> View Repository
                             </a>
                         </div>
+                        
                         <div class="h-full min-h-[200px] rounded-lg border border-border bg-surface flex flex-col font-mono text-xs text-zinc-500 overflow-hidden relative">
                             <!-- Faux Terminal -->
-                            <div class="bg-[#1a1a1a] px-4 py-2 border-b border-border flex gap-2 items-center">
+                            <div class="bg-[#1a1a1a] px-4 py-2 border-b border-border flex gap-2 items-center shrink-0">
                                 <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                                 <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
-                                <span class="ml-2 text-zinc-400">docker_rag.py</span>
+                                <span class="ml-2 text-zinc-400 text-[10px] sm:text-xs">docker_rag.py</span>
                             </div>
-                            <div class="p-4 space-y-2 opacity-80">
+                            <div class="p-4 space-y-2 opacity-80 overflow-x-auto whitespace-pre text-[10px] sm:text-xs">
                                 <p><span class="text-accent-violet">import</span> chromadb</p>
                                 <p><span class="text-accent-violet">from</span> llama_index.llms.ollama <span class="text-accent-violet">import</span> Ollama</p>
                                 <p class="mt-4"><span class="text-zinc-600"># Init local LLM</span></p>
@@ -391,16 +410,42 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Glow card mouse tracking
-        document.querySelectorAll('.bento-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
+        // Mobile Menu Logic
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let menuOpen = false;
+
+        mobileBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+            mobileBtn.innerHTML = menuOpen ? '<i data-lucide="x" class="w-6 h-6"></i>' : '<i data-lucide="menu" class="w-6 h-6"></i>';
+            lucide.createIcons();
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                mobileBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                lucide.createIcons();
             });
         });
+
+        // Glow card mouse tracking (Optimized: Desktop / Fine pointer only)
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.querySelectorAll('.bento-card').forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+        }
     </script>
 </body>
 </html>
