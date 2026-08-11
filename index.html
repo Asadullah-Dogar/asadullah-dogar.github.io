@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Asad Ullah Dogar | AI Developer & Backend Engineer. BS in Artificial Intelligence Graduate. Building intelligent systems from Karachi to the cloud. PyTorch, FastAPI, Systems Thinking, Adaptive AI, Real-Time Learning.">
+    content="Asad Ullah Dogar | AI Developer & Backend Engineer. BS in Artificial Intelligence Graduate. Building intelligent systems, Agentic AI, and LoRA fine-tunes.">
   <meta name="keywords"
-    content="PyTorch, FastAPI, Systems Thinking, Adaptive AI, Real-Time Learning, AI Developer, Backend Engineer, Machine Learning, LLMs, Cloud Architecture, Python, AWS, Portfolio">
+    content="PyTorch, FastAPI, Agentic AI, LoRA, Real-Time Learning, AI Developer, Backend Engineer, Machine Learning, LLMs, Cloud Architecture, Python, AWS, Portfolio">
   <meta name="author" content="Asad Ullah Dogar">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0f172a">
@@ -38,9 +38,7 @@
       --border: rgba(255, 255, 255, 0.07);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -49,32 +47,13 @@
       overflow-x: hidden;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    .syne {
-      font-family: 'Syne', sans-serif;
-    }
-
-    .mono {
-      font-family: 'DM Mono', monospace;
-    }
+    h1, h2, h3, h4, .syne { font-family: 'Syne', sans-serif; }
+    .mono { font-family: 'DM Mono', monospace; }
 
     /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(168, 85, 247, 0.4);
-      border-radius: 4px;
-    }
+    ::-webkit-scrollbar { width: 4px; height: 4px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(168, 85, 247, 0.4); border-radius: 4px; }
 
     /* Grid noise texture */
     body::before {
@@ -98,30 +77,9 @@
       z-index: 0;
       opacity: 0.35;
     }
-
-    .orb-1 {
-      width: 500px;
-      height: 500px;
-      background: rgba(168, 85, 247, 0.3);
-      top: -100px;
-      left: -100px;
-    }
-
-    .orb-2 {
-      width: 400px;
-      height: 400px;
-      background: rgba(34, 211, 238, 0.2);
-      bottom: 20%;
-      right: -100px;
-    }
-
-    .orb-3 {
-      width: 300px;
-      height: 300px;
-      background: rgba(74, 222, 128, 0.15);
-      top: 50%;
-      left: 40%;
-    }
+    .orb-1 { width: 500px; height: 500px; background: rgba(168, 85, 247, 0.3); top: -100px; left: -100px; }
+    .orb-2 { width: 400px; height: 400px; background: rgba(34, 211, 238, 0.2); bottom: 20%; right: -100px; }
+    .orb-3 { width: 300px; height: 300px; background: rgba(74, 222, 128, 0.15); top: 50%; left: 40%; }
 
     /* Animated border cards */
     .glow-card {
@@ -129,14 +87,13 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      transition: border-color 0.3s, transform 0.3s;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-
     .glow-card:hover {
-      border-color: rgba(168, 85, 247, 0.4);
-      transform: translateY(-2px);
+      border-color: rgba(34, 211, 238, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px -10px rgba(34, 211, 238, 0.15);
     }
-
     .glow-card::before {
       content: '';
       position: absolute;
@@ -147,72 +104,25 @@
       transition: opacity 0.3s;
       pointer-events: none;
     }
-
-    .glow-card:hover::before {
-      opacity: 1;
-    }
+    .glow-card:hover::before { opacity: 1; }
 
     /* Profile image ring */
-    .profile-ring {
-      position: relative;
-      display: inline-block;
-    }
-
+    .profile-ring { position: relative; display: inline-block; }
     .profile-ring::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
+      content: ''; position: absolute; inset: -3px; border-radius: 50%;
       background: linear-gradient(135deg, var(--purple), var(--cyan));
-      z-index: -1;
-      animation: spin-slow 8s linear infinite;
+      z-index: -1; animation: spin-slow 8s linear infinite;
     }
-
     .profile-ring::after {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
+      content: ''; position: absolute; inset: -6px; border-radius: 50%;
       background: linear-gradient(135deg, var(--cyan), transparent, var(--purple));
-      z-index: -2;
-      opacity: 0.4;
-      animation: spin-slow 12s linear infinite reverse;
+      z-index: -2; opacity: 0.4; animation: spin-slow 12s linear infinite reverse;
     }
-
-    @keyframes spin-slow {
-      from {
-        transform: rotate(0deg);
-      }
-
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Typing cursor */
-    .cursor::after {
-      content: '|';
-      animation: blink 1s step-end infinite;
-      color: var(--cyan);
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     /* Section fade in */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
 
     /* Nav scroll */
     #navbar.scrolled {
@@ -223,295 +133,50 @@
 
     /* Tag pills */
     .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 10px;
-      border-radius: 6px;
-      font-size: 11px;
-      font-family: 'DM Mono', monospace;
-      border: 1px solid var(--border);
-      background: rgba(255, 255, 255, 0.03);
-      color: #94a3b8;
-      letter-spacing: 0.02em;
-    }
-
-    /* Services card hover glow */
-    .service-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card:hover {
-      border-color: rgba(168, 85, 247, 0.5);
-      box-shadow: 0 0 40px rgba(168, 85, 247, 0.1);
-    }
-
-    .service-card .icon-wrap {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
+      display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 6px;
+      font-size: 11px; font-family: 'DM Mono', monospace; border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.03); color: #cbd5e1; letter-spacing: 0.02em;
     }
 
     /* Hire CTA */
     .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: linear-gradient(135deg, var(--purple), var(--cyan));
-      color: white;
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+      background: linear-gradient(135deg, var(--purple), var(--cyan)); color: white;
+      font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; border-radius: 10px;
+      text-decoration: none; transition: opacity 0.2s, transform 0.2s;
     }
-
-    .btn-primary:hover {
-      opacity: 0.85;
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-1px); }
 
     .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 14px 28px;
-      background: transparent;
-      color: #e2e8f0;
-      font-family: 'Syne', sans-serif;
-      font-weight: 600;
-      font-size: 15px;
-      border-radius: 10px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px;
+      background: transparent; color: #e2e8f0; font-family: 'Syne', sans-serif;
+      font-weight: 600; font-size: 15px; border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.15); text-decoration: none;
       transition: background 0.2s, border-color 0.2s;
     }
+    .btn-secondary:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(255, 255, 255, 0.3); }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.3);
-    }
-
-    /* Timeline dot pulse */
-    .timeline-dot {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
-      animation: pulse-dot 2.5s ease-out infinite;
-    }
-
-    @keyframes pulse-dot {
-      0% {
-        box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.5);
-      }
-
-      70% {
-        box-shadow: 0 0 0 10px rgba(34, 211, 238, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
-      }
-    }
-
-    /* Stats counter */
     .stat-val {
-      font-family: 'Syne', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 800;
+      font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800;
       background: linear-gradient(135deg, white, #94a3b8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
-    /* Custom scrollbar for cert grid */
-    .cert-scroll::-webkit-scrollbar {
-      width: 4px;
-    }
-
-    .cert-scroll::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .cert-scroll::-webkit-scrollbar-thumb {
-      background: rgba(168, 85, 247, 0.3);
-      border-radius: 4px;
-    }
-
-    /* Mobile nav backdrop */
-    #mobile-menu {
-      backdrop-filter: blur(20px);
-      background: rgba(6, 9, 16, 0.95);
-    }
-
-    /* Teachable Machine card — animated scan-line shimmer */
-    .tm-card {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .tm-card::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(105deg,
-          transparent 40%,
-          rgba(99, 102, 241, 0.07) 50%,
-          transparent 60%);
-      background-size: 200% 100%;
-      animation: shimmer-scan 4s linear infinite;
-      pointer-events: none;
-      border-radius: 16px;
-    }
-
-    @keyframes shimmer-scan {
-      0% {
-        background-position: 200% 0;
-      }
-
-      100% {
-        background-position: -200% 0;
-      }
-    }
-
-    /* Architecture detail list */
-    .arch-list li {
-      position: relative;
-      padding-left: 18px;
-      color: #64748b;
-      font-size: 13px;
-      line-height: 1.7;
-    }
-
-    .arch-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: #6366f1;
-      font-size: 10px;
-      top: 3px;
-    }
-
-    /* Pill badge for SMIT label */
-    .smit-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 12px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.15));
-      border: 1px solid rgba(99, 102, 241, 0.45);
-      color: #a5b4fc;
-      font-family: 'DM Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.03em;
-    }
-
-    .smit-badge .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #818cf8;
-      animation: pulse-dot 2s ease-out infinite;
-    }
-
-    /* Action button pair for project cards */
     .proj-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-family: 'DM Mono', monospace;
-      font-size: 12px;
-      text-decoration: none;
-      transition: all 0.2s;
-      border: 1px solid;
+      display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+      border-radius: 8px; font-family: 'DM Mono', monospace; font-size: 12px;
+      text-decoration: none; transition: all 0.2s; border: 1px solid;
     }
+    .proj-btn-outline { border-color: rgba(255, 255, 255, 0.12); color: #94a3b8; background: transparent; }
+    .proj-btn-outline:hover { border-color: rgba(99, 102, 241, 0.5); color: #a5b4fc; background: rgba(99, 102, 241, 0.08); }
 
-    .proj-btn-outline {
-      border-color: rgba(255, 255, 255, 0.12);
-      color: #94a3b8;
-      background: transparent;
-    }
-
-    .proj-btn-outline:hover {
-      border-color: rgba(99, 102, 241, 0.5);
-      color: #a5b4fc;
-      background: rgba(99, 102, 241, 0.08);
-    }
-
-    .proj-btn-solid {
-      border-color: rgba(99, 102, 241, 0.4);
-      color: #e0e7ff;
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.25), rgba(168, 85, 247, 0.15));
-    }
-
-    .proj-btn-solid:hover {
-      border-color: rgba(99, 102, 241, 0.7);
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.4), rgba(168, 85, 247, 0.25));
-      transform: translateY(-1px);
-    }
-
-    /* Adaption Labs Ambassador leadership bullet list */
     .leadership-bullets li {
-      position: relative;
-      padding-left: 20px;
-      color: #64748b;
-      font-size: 13.5px;
-      line-height: 1.75;
+      position: relative; padding-left: 20px; color: #64748b; font-size: 14px; line-height: 1.75;
     }
-
     .leadership-bullets li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--cyan);
-      font-size: 10px;
-      top: 4px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-      }
+      content: '▸'; position: absolute; left: 0; color: var(--cyan); font-size: 10px; top: 4px;
     }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Asad Ullah Dogar",
-    "url": "https://asadullah-dogar.github.io/",
-    "email": "dogarasad277@gmail.com",
-    "jobTitle": "AI Developer & Backend Engineer",
-    "sameAs": [
-      "https://github.com/Asadullah-Dogar",
-      "https://www.linkedin.com/in/asad-ullah-dogar/"
-    ],
-    "description": "BS in Artificial Intelligence Graduate and AI Developer specializing in PyTorch, FastAPI, Adaptive AI, Real-Time Learning, and high-throughput backend systems.",
-    "knowsAbout": ["PyTorch", "FastAPI", "Systems Thinking", "Adaptive AI", "Real-Time Learning", "Machine Learning", "LLMs", "Computer Vision", "Backend Architecture", "Cloud Computing", "Python", "AWS"]
-  }
-  </script>
 </head>
 
 <body role="document">
@@ -522,804 +187,248 @@
   <div class="orb orb-3" aria-hidden="true"></div>
 
   <!-- NAVIGATION -->
-  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5" role="navigation"
-    aria-label="Main navigation">
+  <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-5" role="navigation">
     <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
       <a href="#home" class="syne text-lg font-bold text-white flex items-center gap-2">
-        <span
-          class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black">A</span>
+        <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black">A</span>
         ASAD<span class="text-purple-500">.</span>DEV
       </a>
-
       <div class="hidden md:flex gap-8 items-center">
-        <a href="#about"
-          class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">ABOUT</a>
-        <a href="#services"
-          class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">SERVICES</a>
-        <a href="#projects"
-          class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">PROJECTS</a>
-        <a href="#certifications"
-          class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">CERTS</a>
-        <a href="#contact"
-          class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">CONTACT</a>
+        <a href="#about" class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">ABOUT</a>
+        <a href="#projects" class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">PROJECTS</a>
+        <a href="#achievements" class="mono text-xs text-slate-400 hover:text-cyan-400 transition-colors tracking-wider">IMPACT</a>
         <a href="#contact" class="btn-primary text-sm py-2.5 px-5">Hire Me</a>
       </div>
-
-      <button id="menu-btn"
-        class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg border border-slate-800 text-slate-300"
-        aria-label="Toggle menu" aria-expanded="false">
-        <i data-lucide="menu" id="menu-icon" class="w-5 h-5" aria-hidden="true"></i>
-      </button>
-    </div>
-
-    <div id="mobile-menu"
-      class="hidden md:hidden absolute top-full left-0 w-full border-b border-slate-800 py-6 px-6 flex-col gap-5 shadow-2xl">
-      <a href="#about" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">About</a>
-      <a href="#services" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Services</a>
-      <a href="#projects" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Projects</a>
-      <a href="#certifications"
-        class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Certifications</a>
-      <a href="#experience" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Experience</a>
-      <a href="#leadership" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Leadership</a>
-      <a href="#contact" class="mobile-link syne text-lg font-bold text-white hover:text-cyan-400">Contact</a>
-      <a href="#contact" class="btn-primary self-start">Hire Me</a>
     </div>
   </nav>
 
   <main class="max-w-7xl mx-auto relative z-10">
 
     <!-- HERO -->
-    <section id="home" class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-24 pb-12"
-      role="region" aria-label="Hero">
+    <section id="home" class="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-24 pb-12">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Text -->
         <div>
-          <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-cyan-400 mono text-xs mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700 text-cyan-400 mono text-xs mb-8">
             <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            BS AI Graduate &amp; Developer · Karachi, Pakistan 🇵🇰
+            BS AI Graduate & Developer · Karachi, Pakistan 🇵🇰
           </div>
 
           <h1 class="syne text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6">
-            Building<br>
-            <span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">Intelligent</span><br>
+            Architecting<br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500">Agentic</span><br>
             Systems.
           </h1>
 
           <p class="text-slate-400 text-lg leading-relaxed mb-10 max-w-lg">
-            I turn data into action, from Vision-Language Models for satellite imagery to scalable backend architecture.
-            Engineered <strong class="text-slate-200">Vision-Language Models</strong> accelerated by the 10Pearls FYP
-            Accelerator.
+            I build full-stack AI applications, automated data pipelines, and intelligent agents. Moving beyond static models to engineer <strong class="text-slate-200">real-time adaptive reasoning</strong> and robust backend architecture.
           </p>
 
           <div class="flex flex-wrap gap-4 mb-10">
-            <a href="#projects" class="btn-primary">View My Work <i data-lucide="arrow-right" class="w-4 h-4"
-                aria-hidden="true"></i></a>
-            <a href="#contact" class="btn-secondary"><i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i> Let's
-              Talk</a>
+            <a href="#projects" class="btn-primary">View My Work <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a href="#contact" class="btn-secondary"><i data-lucide="mail" class="w-4 h-4"></i> Let's Talk</a>
           </div>
 
-          <!-- Quick stats -->
           <div class="flex gap-8 pt-8 border-t border-slate-800">
             <div>
               <div class="stat-val">20+</div>
-              <p class="text-slate-500 mono text-xs mt-1">CERTIFICATES</p>
+              <p class="text-slate-500 mono text-xs mt-1">CERTIFICATIONS</p>
             </div>
             <div>
-              <div class="stat-val">1+</div>
-              <p class="text-slate-500 mono text-xs mt-1">YEAR EXP</p>
+              <div class="stat-val">Top 1%</div>
+              <p class="text-slate-500 mono text-xs mt-1">GLOBAL AI HACKATHONS</p>
             </div>
           </div>
         </div>
 
-        <!-- Profile image -->
         <div class="flex justify-center lg:justify-end">
           <div class="profile-ring">
-            <img src="my_profile.png" alt="Asad Ullah Dogar — AI Developer & Backend Engineer"
-              class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10"
-              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-            <!-- Fallback avatar if no photo yet -->
-            <div style="display:none;"
-              class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-900 to-slate-900 items-center justify-center text-7xl font-black text-white syne z-10">
-              A
-            </div>
+            <img src="my_profile.png" alt="Asad Ullah Dogar" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover relative z-10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div style="display:none;" class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-purple-900 to-slate-900 items-center justify-center text-7xl font-black text-white syne z-10">A</div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- ABOUT & STACK -->
-    <section id="about" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="About">
+    <!-- ABOUT -->
+    <section id="about" class="fade-up py-24 px-6 md:px-12 lg:px-24">
       <div class="grid md:grid-cols-2 gap-16 items-start">
         <div>
           <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// ABOUT ME</p>
-          <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-6">Architecture<br>meets <span
-              class="text-purple-400">Execution.</span></h2>
+          <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-6">Execution meets <span class="text-purple-400">Scale.</span></h2>
           <p class="text-slate-400 text-lg leading-relaxed mb-6">
-            I'm a formal Graduate in Artificial Intelligence — a builder at heart who moves across the full stack with
-            intention. Whether engineering adaptive Vision-Language Models, architecting high-throughput non-blocking
-            backends, or driving cross-stack optimization from model internals to cloud infrastructure, my goal is
-            always the same: systems that solve real problems in real time.
+            I'm a formal Graduate in Artificial Intelligence bridging the gap between high-volume technical execution and strategic engineering. I specialize in real-time continual alignment—building ML pipelines, LoRA fine-tunes, and ReAct agents that adapt under live conditions.
           </p>
           <p class="text-slate-400 leading-relaxed mb-8">
-            From rapid prototyping to production-grade deployments, I write clean, maintainable systems engineered for
-            scale. I specialize in real-time continual alignment — building ML pipelines and backend services that don't
-            just perform at launch, but adapt and improve under live conditions. I bridge high-volume technical
-            execution with strategic leadership.
+            Beyond the code editor, I actively share technical insights, AI developments, and market analysis with the developer and Web3 communities on Binance Square.
           </p>
           <div class="flex gap-4">
-            <a href="https://github.com/Asadullah-Dogar" target="_blank" rel="noopener noreferrer"
-              class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all"
-              aria-label="GitHub">
-              <i class="fab fa-github text-lg" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/asad-ullah-dogar/" target="_blank" rel="noopener noreferrer"
-              class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-800 transition-all"
-              aria-label="LinkedIn">
-              <i class="fab fa-linkedin text-lg" aria-hidden="true"></i>
-            </a>
-            <a href="mailto:dogarasad277@gmail.com"
-              class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-cyan-400 hover:border-cyan-800 transition-all"
-              aria-label="Email">
-              <i data-lucide="mail" class="w-5 h-5" aria-hidden="true"></i>
-            </a>
+            <a href="https://github.com/Asadullah-Dogar" target="_blank" class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-600 transition-all"><i class="fab fa-github text-lg"></i></a>
+            <a href="https://www.linkedin.com/in/asad-ullah-dogar/" target="_blank" class="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-blue-400 hover:border-blue-800 transition-all"><i class="fab fa-linkedin text-lg"></i></a>
           </div>
         </div>
 
         <div class="grid grid-cols-2 gap-4">
           <div class="glow-card p-6">
-            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4">
-              <i data-lucide="terminal" class="w-5 h-5 text-purple-400" aria-hidden="true"></i>
-            </div>
-            <h3 class="syne text-white font-bold text-lg mb-2">Python Core</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">FastAPI, Django, microservices & backend architecture.</p>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4"><i data-lucide="bot" class="w-5 h-5 text-cyan-400"></i></div>
+            <h3 class="syne text-white font-bold text-lg mb-2">Agentic AI & LLMs</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">LangChain, ReAct Agents, LoRA fine-tuning, and sophisticated RAG architectures.</p>
           </div>
           <div class="glow-card p-6">
-            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center mb-4">
-              <i data-lucide="brain" class="w-5 h-5 text-cyan-400" aria-hidden="true"></i>
-            </div>
-            <h3 class="syne text-white font-bold text-lg mb-2">LLMs & AI</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">PyTorch, VLMs, Agentic workflows & RAG systems.</p>
-          </div>
-          <div class="glow-card p-6">
-            <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center mb-4">
-              <i data-lucide="cloud" class="w-5 h-5 text-orange-400" aria-hidden="true"></i>
-            </div>
-            <h3 class="syne text-white font-bold text-lg mb-2">Cloud Native</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">AWS ecosystem, Serverless, Infrastructure as Code.</p>
-          </div>
-          <div class="glow-card p-6">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
-              <i data-lucide="database" class="w-5 h-5 text-emerald-400" aria-hidden="true"></i>
-            </div>
-            <h3 class="syne text-white font-bold text-lg mb-2">Data Eng</h3>
-            <p class="text-slate-500 text-sm leading-relaxed">Vector DBs, ETL pipelines, real-time analytics.</p>
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 flex items-center justify-center mb-4"><i data-lucide="terminal" class="w-5 h-5 text-purple-400"></i></div>
+            <h3 class="syne text-white font-bold text-lg mb-2">Backend & APIs</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">High-throughput FastAPI, Flask, serverless deployments, and automated pipelines.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES / HIRE ME -->
-    <section id="services" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="Services">
-      <div class="text-center mb-16">
-        <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// WHAT I BUILD FOR YOU</p>
-        <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-4">Services &amp; <span class="text-cyan-400">Hire
-            Me</span></h2>
-        <p class="text-slate-400 max-w-xl mx-auto">Need something built? I take on freelance projects. Let's turn your
-          idea into a working product.</p>
-      </div>
+    <!-- PROJECTS -->
+    <section id="projects" class="fade-up py-24 px-6 md:px-12 lg:px-24">
+      <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// FEATURED ENGINEERING</p>
+      <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-12">Production <span class="text-cyan-400">Systems.</span></h2>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-
-        <!-- Portfolio Websites -->
-        <div class="service-card group">
-          <div class="icon-wrap bg-purple-500/10">
-            <i data-lucide="layout" class="w-6 h-6 text-purple-400" aria-hidden="true"></i>
-          </div>
-          <h3 class="syne text-white font-bold text-xl mb-3">Portfolio Websites</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Stunning, responsive personal portfolio sites for
-            developers, designers, and professionals. Built to impress recruiters and clients.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">HTML/CSS</span>
-            <span class="tag">React</span>
-            <span class="tag">GitHub Pages</span>
-          </div>
-        </div>
-
-        <!-- Data Analysis -->
-        <div class="service-card group">
-          <div class="icon-wrap bg-cyan-500/10">
-            <i data-lucide="bar-chart-2" class="w-6 h-6 text-cyan-400" aria-hidden="true"></i>
-          </div>
-          <h3 class="syne text-white font-bold text-xl mb-3">Data Analysis</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Turn raw data into clear insights. Exploratory
-            analysis, dashboards, visualizations, and automated reports using Python & pandas.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">Python</span>
-            <span class="tag">pandas</span>
-            <span class="tag">Matplotlib</span>
-          </div>
-        </div>
-
-        <!-- Web Scraping -->
-        <div class="service-card group">
-          <div class="icon-wrap bg-green-500/10">
-            <i data-lucide="code-2" class="w-6 h-6 text-green-400" aria-hidden="true"></i>
-          </div>
-          <h3 class="syne text-white font-bold text-xl mb-3">Web Scraping</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Automated data extraction from any website. Product
-            prices, leads, news, job listings, delivered clean and structured.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">BeautifulSoup</span>
-            <span class="tag">Scrapy</span>
-            <span class="tag">Selenium</span>
-          </div>
-        </div>
-
-        <!-- Backend APIs -->
-        <div class="service-card group">
-          <div class="icon-wrap bg-orange-500/10">
-            <i data-lucide="server" class="w-6 h-6 text-orange-400" aria-hidden="true"></i>
-          </div>
-          <h3 class="syne text-white font-bold text-xl mb-3">Backend APIs</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Fast, scalable REST APIs and microservices. Built with
-            FastAPI or Django, deployable to AWS or any cloud provider.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">FastAPI</span>
-            <span class="tag">Django</span>
-            <span class="tag">AWS</span>
-          </div>
-        </div>
-
-        <!-- AI Integration -->
-        <div class="service-card group">
-          <div class="icon-wrap bg-pink-500/10">
-            <i data-lucide="sparkles" class="w-6 h-6 text-pink-400" aria-hidden="true"></i>
-          </div>
-          <h3 class="syne text-white font-bold text-xl mb-3">AI Integration</h3>
-          <p class="text-slate-500 text-sm leading-relaxed mb-4">Add AI to your product — chatbots, document Q&A, smart
-            search, LLM-powered features. Production-ready and cost-efficient.</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="tag">LLMs</span>
-            <span class="tag">RAG</span>
-            <span class="tag">OpenAI</span>
-          </div>
-        </div>
-
-        <!-- CTA card -->
-        <div class="service-card flex flex-col items-start justify-between"
-          style="background: linear-gradient(135deg, rgba(168,85,247,0.1), rgba(34,211,238,0.05)); border-color: rgba(168,85,247,0.3);">
+      <div class="grid lg:grid-cols-2 gap-6 mb-6">
+        
+        <!-- BidPilot -->
+        <div class="glow-card p-8 flex flex-col justify-between">
           <div>
-            <p class="mono text-xs text-purple-400 mb-4 tracking-wider">// READY TO START?</p>
-            <h3 class="syne text-white font-bold text-xl mb-3">Let's Work Together</h3>
-            <p class="text-slate-400 text-sm leading-relaxed mb-6">Have a project in mind? Send me a message and I'll
-              get back to you within 24 hours.</p>
-          </div>
-          <a href="mailto:dogarasad277@gmail.com" class="btn-primary">
-            <i data-lucide="send" class="w-4 h-4" aria-hidden="true"></i>
-            Get a Quote
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================== PROJECTS ===================== -->
-    <section id="projects" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region" aria-label="Featured Projects">
-      <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// FEATURED WORK</p>
-      <h2 class="syne text-3xl md:text-5xl font-bold text-white mb-12">Featured <span
-          class="text-purple-400">Engineering.</span></h2>
-
-      <!-- Row 1: Hero satellite card (2 cols) + Tech Portfolio card (1 col) -->
-      <div class="grid lg:grid-cols-3 gap-6 mb-6">
-
-        <!-- Project 1 — Vision-Language Model (hero, 2-col) -->
-        <div class="glow-card p-8 lg:col-span-2 flex flex-col justify-between" style="min-height: 300px;">
-          <div>
-            <div class="flex items-center justify-between mb-6 flex-wrap gap-3">
-              <span
-                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 mono text-xs border border-cyan-800/40">
-                <i data-lucide="award" class="w-3.5 h-3.5" aria-hidden="true"></i> 10Pearls FYP Accelerator
-              </span>
-              <span class="tag">Active</span>
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-900/30 text-blue-400 mono text-xs border border-blue-800/40">Full-Stack AI Software</span>
             </div>
-            <h3 class="syne text-white font-bold text-2xl md:text-3xl mb-4">Vision-Language Model<br>for Satellite
-              Imagery</h3>
-            <p class="text-slate-400 leading-relaxed mb-8">
-              Advanced ML system combining large language models with computer vision to analyze satellite imagery.
-              Real-time insights for earth observation, environmental monitoring, and geospatial analysis.
-              Selected for the elite 10Pearls accelerator, production-ready architecture at scale.
+            <h3 class="syne text-white font-bold text-2xl mb-3">BidPilot</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              An advanced, autonomous bidding and analytical engine featuring a LangChain ReAct agent at its core. Integrated with a high-performance FastAPI backend, ChromaDB for semantic memory, and a Streamlit frontend for real-time observability.
             </p>
           </div>
           <div class="flex flex-wrap gap-2">
-            <span class="tag">PyTorch</span>
-            <span class="tag">Computer Vision</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">AWS</span>
+            <span class="tag">FastAPI</span><span class="tag">LangChain</span><span class="tag">ReAct Agents</span><span class="tag">ChromaDB</span>
           </div>
         </div>
 
-        <!-- Project 2 — Local Docker RAG Assistant (1 col) -->
-        <div class="glow-card tm-card p-8 flex flex-col justify-between"
-          style="border-color: rgba(34,211,238,0.3); background: linear-gradient(145deg, #0d1117 60%, rgba(34,211,238,0.04));">
+        <!-- MedScout-17B & CodeIntel -->
+        <div class="glow-card p-8 flex flex-col justify-between">
           <div>
-            <span
-              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-900/30 text-cyan-400 mono text-xs border border-cyan-800/40 mb-6 block w-fit">
-              <i data-lucide="cpu" class="w-3.5 h-3.5" aria-hidden="true"></i> Fully Local , Air-Gapped
-            </span>
-            <h3 class="syne text-white font-bold text-xl mb-1 leading-tight">Local Docker RAG Assistant</h3>
-            <p class="mono text-xs text-cyan-400 mb-4 tracking-wide">Zero-hallucination QA over Docker docs</p>
-            <p class="text-slate-400 text-sm leading-relaxed mb-5">
-              A fully local, zero-hallucination chatbot over verified Docker documentation. Built with Streamlit,
-              LlamaIndex, ChromaDB, and Ollama, no cloud APIs, no data leaves your machine.
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-900/30 text-purple-400 mono text-xs border border-purple-800/40">AutoScientist Challenge Models</span>
+            </div>
+            <h3 class="syne text-white font-bold text-2xl mb-3">MedScout-17B & CodeIntel-v1</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              Precision LoRA fine-tunes engineered for high-stakes domains. <strong>MedScout-17B</strong> adapts Llama-4-Scout-17B for complex clinical visual question answering. <strong>CodeIntel-v1</strong> leverages Gemma-3-4B-It to optimize highly specific Python reasoning tasks. Both models published to Hugging Face.
             </p>
           </div>
-          <div class="space-y-4">
-            <div class="flex flex-wrap gap-1.5">
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Streamlit 1.36</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">LlamaIndex 0.10</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">ChromaDB</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Ollama (llama3.2:1b)</span>
-            </div>
-            <a href="https://github.com/Asadullah-Dogar/docker-rag-assistant" target="_blank" rel="noopener noreferrer"
-              class="proj-btn proj-btn-outline">
-              <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
-              View Source
-            </a>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">LoRA</span><span class="tag">Hugging Face</span><span class="tag">Llama-4</span><span class="tag">Gemma-3</span>
           </div>
         </div>
-
       </div>
 
-      <!-- Row 2: Custom Teachable Machine (2 col) + Docker RAG (1 col) -->
-      <div class="grid lg:grid-cols-3 gap-6 mb-6">
-
-        <!-- Project 3 — Custom Teachable Machine (2-col, premium) -->
-        <div class="glow-card tm-card p-8 lg:col-span-2 flex flex-col justify-between"
-          style="min-height:340px; border-color: rgba(99,102,241,0.35); background: linear-gradient(145deg, #0d1117 60%, rgba(99,102,241,0.06));">
+      <div class="grid lg:grid-cols-2 gap-6">
+        <!-- Local Docker RAG Assistant -->
+        <div class="glow-card p-8 flex flex-col justify-between">
           <div>
-            <!-- Header row -->
-            <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
-              <span class="smit-badge">
-                <span class="dot"></span>
-                SMIT AI Internship Project
-              </span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.3); color:#818cf8;">Full-Stack ML</span>
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-900/30 text-emerald-400 mono text-xs border border-emerald-800/40"><i data-lucide="cpu" class="w-3.5 h-3.5"></i> Fully Local, Air-Gapped</span>
             </div>
-
-            <!-- Title block -->
-            <h3 class="syne text-white font-bold text-2xl md:text-3xl mb-1 leading-tight">Custom Teachable Machine</h3>
-            <p class="mono text-xs text-indigo-400 mb-5 tracking-wide">A Decoupled Client-Server Framework for
-              Browser-Based Transfer Learning</p>
-
-            <!-- Architecture detail list -->
-            <ul class="arch-list space-y-0.5 mb-7">
-              <li>Lightweight <strong class="text-slate-400">Streamlit</strong> presentation client with custom CSS &
-                responsive Altair visualizations, fully isolated from compute.</li>
-              <li>Production-grade <strong class="text-slate-400">FastAPI</strong> server container with embedded
-                <strong class="text-slate-400">PyTorch MobileNetV3</strong> backbone as structural feature extractor.
-              </li>
-              <li>Real-time classifier training on CPU via optimized <strong class="text-slate-400">Scikit-Learn
-                  Logistic Regression</strong> heads.</li>
-              <li>Live validation accuracy matrix via automated <strong class="text-slate-400">80/20 train-test
-                  split</strong>.</li>
-            </ul>
+            <h3 class="syne text-white font-bold text-2xl mb-3">Local Docker RAG Assistant</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              A zero-hallucination QA chatbot securely bounded to verified Docker documentation. Built natively using LlamaIndex, ChromaDB, and Ollama to ensure complete data privacy—no cloud APIs required.
+            </p>
           </div>
-
-          <!-- Footer: tags + action buttons -->
-          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
-            <div class="flex flex-wrap gap-2">
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">FastAPI</span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Streamlit</span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Docker</span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">PyTorch (MobileNetV3)</span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Scikit-Learn</span>
-              <span class="tag" style="border-color:rgba(99,102,241,0.25); color:#a5b4fc;">Hugging Face Spaces</span>
-            </div>
-            <div class="flex items-center gap-3 shrink-0">
-              <a href="https://github.com/Asadullah-Dogar/custom-teachable-machine" target="_blank"
-                rel="noopener noreferrer" class="proj-btn proj-btn-outline">
-                <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                View Source
-              </a>
-              <a href="https://custom-teachable-machine.streamlit.app/" target="_blank" rel="noopener noreferrer"
-                class="proj-btn proj-btn-solid">
-                <i data-lucide="external-link" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                Launch App
-              </a>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">LlamaIndex</span><span class="tag">Ollama</span><span class="tag">Streamlit</span>
           </div>
         </div>
-
-        <!-- GitHub CTA (1 col) -->
-        <div class="glow-card p-8 flex flex-col items-start justify-between gap-6"
-          style="background: linear-gradient(135deg, rgba(168,85,247,0.05), rgba(34,211,238,0.03));">
+        
+        <!-- Custom Teachable Machine -->
+        <div class="glow-card p-8 flex flex-col justify-between">
           <div>
-            <p class="mono text-xs text-slate-500 mb-2 tracking-wider">// MORE WORK</p>
-            <h3 class="syne text-white font-bold text-2xl mb-2">See all projects on GitHub</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Microservices, ML experiments, data pipelines, and more
-              open-source work.</p>
+            <div class="flex items-center justify-between mb-4 flex-wrap gap-3">
+              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-900/30 text-orange-400 mono text-xs border border-orange-800/40">SMIT AI Project</span>
+            </div>
+            <h3 class="syne text-white font-bold text-2xl mb-3">Custom Teachable Machine</h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+              A decoupled framework for browser-based transfer learning. Features a robust FastAPI container leveraging PyTorch MobileNetV3 as a structural feature extractor, computing real-time classifications via optimized Scikit-Learn logic heads.
+            </p>
           </div>
-          <a href="https://github.com/Asadullah-Dogar" target="_blank" rel="noopener noreferrer" class="btn-secondary">
-            <i class="fab fa-github text-base" aria-hidden="true"></i> GitHub
-          </a>
-        </div>
-
-      </div>
-
-      <!-- Row 3: Docker RAG Assistant (2 col) + Features (1 col) -->
-      <div class="grid lg:grid-cols-3 gap-6">
-
-        <!-- Project 4 — Local Docker RAG Assistant (2-col, premium) -->
-        <div class="glow-card tm-card p-8 lg:col-span-2 flex flex-col justify-between"
-          style="min-height:340px; border-color: rgba(34,211,238,0.35); background: linear-gradient(145deg, #0d1117 60%, rgba(34,211,238,0.06));">
-          <div>
-            <!-- Header row -->
-            <div class="flex items-start justify-between mb-6 flex-wrap gap-3">
-              <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mono text-xs border"
-                style="background: rgba(34,211,238,0.1); border-color: rgba(34,211,238,0.35); color:#67e8f9;">
-                <i data-lucide="cpu" class="w-3.5 h-3.5" aria-hidden="true"></i> Fully Local , Air-Gapped
-              </span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.3); color:#67e8f9;">RAG System</span>
-            </div>
-
-            <!-- Title block -->
-            <h3 class="syne text-white font-bold text-2xl md:text-3xl mb-1 leading-tight">Local Docker RAG Assistant
-            </h3>
-            <p class="mono text-xs text-cyan-400 mb-5 tracking-wide">Zero-hallucination QA over verified Docker
-              documentation, no cloud APIs, no data leaves your machine</p>
-
-            <!-- Feature list -->
-            <ul class="arch-list space-y-1 mb-7">
-              <li>Zero-hallucination , answers bounded strictly to <strong class="text-slate-400">340 verified Docker
-                  doc chunks</strong></li>
-              <li>Fully local &amp; air-gapped , <strong class="text-slate-400">ChromaDB</strong>, embeddings, and LLM
-                all run on-device</li>
-              <li>CPU-optimized , tuned context window and chunk sizes for fast inference without a GPU</li>
-              <li>Streaming responses , token-by-token output via <strong
-                  class="text-slate-400">st.write_stream</strong></li>
-              <li>Source citations , every answer shows which doc chunks were used</li>
-            </ul>
-          </div>
-
-          <!-- Footer: badge grid + action buttons -->
-          <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5">
-            <div class="flex flex-wrap gap-2">
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Streamlit 1.36</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">LlamaIndex 0.10</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">ChromaDB (local
-                persistent)</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">BAAI/bge-large-en-v1.5</span>
-              <span class="tag" style="border-color:rgba(34,211,238,0.25); color:#67e8f9;">Ollama (llama3.2:1b)</span>
-            </div>
-            <div class="flex items-center gap-3 shrink-0">
-              <a href="https://github.com/Asadullah-Dogar/docker-rag-assistant" target="_blank"
-                rel="noopener noreferrer" class="proj-btn proj-btn-outline">
-                <i data-lucide="code-2" class="w-3.5 h-3.5" aria-hidden="true"></i>
-                View Source
-              </a>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">PyTorch</span><span class="tag">Scikit-Learn</span><span class="tag">FastAPI</span>
           </div>
         </div>
-
-        <!-- RAG Feature highlights (1 col) -->
-        <div class="glow-card p-8 flex flex-col gap-5"
-          style="background: linear-gradient(135deg, rgba(34,211,238,0.04), rgba(168,85,247,0.03));">
-          <p class="mono text-xs text-cyan-400 tracking-wider">// TECH STACK BREAKDOWN</p>
-          <div class="space-y-4">
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-cyan-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="layout" class="w-4 h-4 text-cyan-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <p class="syne text-white font-bold text-sm">UI</p>
-                <p class="text-slate-500 text-xs mono">Streamlit 1.36</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="git-merge" class="w-4 h-4 text-purple-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <p class="syne text-white font-bold text-sm">RAG Framework</p>
-                <p class="text-slate-500 text-xs mono">LlamaIndex 0.10</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="database" class="w-4 h-4 text-emerald-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <p class="syne text-white font-bold text-sm">Vector Store</p>
-                <p class="text-slate-500 text-xs mono">ChromaDB (local persistent)</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center shrink-0 mt-0.5">
-                <i data-lucide="cpu" class="w-4 h-4 text-indigo-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <p class="syne text-white font-bold text-sm">LLM Runtime</p>
-                <p class="text-slate-500 text-xs mono">Ollama (llama3.2:1b)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
-    <!-- ===================== END PROJECTS ===================== -->
 
-
-
-    <!-- CERTIFICATIONS, EXPERIENCE & LEADERSHIP -->
-    <section id="certifications" class="fade-up py-24 px-6 md:px-12 lg:px-24" role="region"
-      aria-label="Certifications, Experience, and Leadership">
+    <!-- ACHIEVEMENTS & LEADERSHIP -->
+    <section id="achievements" class="fade-up py-24 px-6 md:px-12 lg:px-24">
       <div class="grid lg:grid-cols-2 gap-16">
-
-        <!-- Certs -->
         <div>
-          <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// CREDENTIALS</p>
+          <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// COMPETITIONS & LEADERSHIP</p>
+          <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Global Impact.</h2>
+          
+          <div class="relative pl-8 border-l border-slate-800">
+            <div class="relative mb-10">
+              <div class="absolute w-3 h-3 rounded-full bg-cyan-400 -left-[38px] top-1"></div>
+              <span class="mono text-xs text-cyan-400 tracking-wider mb-2 block">2026 · ADAPTION LABS</span>
+              <h4 class="syne text-white font-bold text-xl mb-1">Global 1st Place - AutoScientist Challenge</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Secured 1st place globally in the Finance category for Part 1 of the AutoScientist Challenge hosted by Adaption Labs, demonstrating advanced capabilities in predictive modeling and quantitative analysis.
+              </p>
+            </div>
+            
+            <div class="relative mb-10">
+              <div class="absolute w-3 h-3 rounded-full bg-purple-400 -left-[38px] top-1"></div>
+              <span class="mono text-xs text-purple-400 tracking-wider mb-2 block">PRESENT · AMBASSADOR</span>
+              <h4 class="syne text-white font-bold text-xl mb-1">Adaption Labs Ambassador</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Driving community technical depth by advocating for hands-on, open-source model development over static API wrappers. Actively organizing builder ecosystems focused on adaptive, real-time AI systems.
+              </p>
+            </div>
+
+            <div class="relative">
+              <div class="absolute w-3 h-3 rounded-full bg-slate-600 -left-[38px] top-1"></div>
+              <span class="mono text-xs text-slate-500 tracking-wider mb-2 block">2026 · HACKATHONS</span>
+              <h4 class="syne text-white font-bold text-xl mb-1">Active Hackathon Competitor</h4>
+              <p class="text-slate-400 text-sm leading-relaxed">
+                Participated in rapid-prototyping events including the OpenAI Build Week (Codex & GPT-5.6), the First Alibaba Cloud AI Hackathon, and the Egoist Ideathon focusing on multi-agent development tracks.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// LATEST CREDENTIALS</p>
           <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Certifications.</h2>
-
-          <!-- Featured cert -->
-          <div class="glow-card p-6 mb-4" style="border-color: rgba(249,115,22,0.3);">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center shrink-0">
-                <i data-lucide="cloud" class="w-6 h-6 text-orange-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h4 class="syne text-white font-bold text-lg leading-tight mb-1">AWS AI Practitioner Challenge</h4>
-                <p class="mono text-xs text-slate-500 mb-3">UDACITY · MAR 2026</p>
-                <p class="text-slate-400 text-sm leading-relaxed">AI/ML foundations, Generative AI, and computer vision
-                  using Amazon Bedrock. Building intelligent, scalable cloud solutions.</p>
-              </div>
-            </div>
+          <div class="glow-card p-6 mb-4">
+            <h4 class="syne text-white font-bold text-lg mb-1">AWS Certified AI Practitioner</h4>
+            <p class="text-slate-400 text-sm">Validated expertise in Generative AI, machine learning foundations, and scalable cloud solutions using Amazon Bedrock.</p>
           </div>
-
-          <!-- Featured cert 2 -->
-          <div class="glow-card p-6 mb-4" style="border-color: rgba(34,211,238,0.3);">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center shrink-0">
-                <i data-lucide="brain" class="w-6 h-6 text-cyan-400" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h4 class="syne text-white font-bold text-lg leading-tight mb-1">AI Fundamentals</h4>
-                <p class="mono text-xs text-slate-500 mb-3">GOOGLE · APR 2026</p>
-                <p class="text-slate-400 text-sm leading-relaxed">Core AI concepts and applied machine learning from
-                  Google. Credential ID: P4ICNYH7U8H2.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cert archive -->
           <div class="glow-card p-5">
-            <h4 class="mono text-xs text-slate-500 tracking-widest mb-4 uppercase">Learning Archive</h4>
-            <div id="cert-grid" class="grid sm:grid-cols-2 gap-3 max-h-80 overflow-y-auto cert-scroll pr-1"></div>
+            <div id="cert-grid" class="grid sm:grid-cols-2 gap-3 max-h-[300px] overflow-y-auto cert-scroll pr-1"></div>
           </div>
         </div>
-
-        <!-- Experience + Leadership stacked in right column -->
-        <div class="space-y-16">
-
-          <!-- ===== EXPERIENCE ===== -->
-          <div id="experience">
-            <p class="mono text-xs text-purple-400 mb-4 tracking-widest">// EXPERIENCE</p>
-            <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Experience.</h2>
-
-            <div class="relative pl-8 border-l border-slate-800">
-
-              <!-- AI Intern at SMIT -->
-              <div class="relative mb-4">
-                <div class="timeline-dot absolute -left-[41px] top-1"></div>
-                <span class="mono text-xs text-purple-400 tracking-wider mb-2 block">MAY 2026 – PRESENT · 2 MOS ·
-                  ON-SITE</span>
-                <h4 class="syne text-white font-bold text-xl mb-0.5">Artificial Intelligence Intern</h4>
-                <p class="text-purple-400 mono text-sm mb-1">S.M.I.T (Saylani Mass I.T Training) , Internship</p>
-                <p class="mono text-xs text-slate-600 mb-4">Karachi Division, Sindh, Pakistan</p>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                  Engaged in an intensive technical incubator track focused on building secure application architectures
-                  and optimizing real-time machine learning pipelines.
-                </p>
-                <ul class="leadership-bullets space-y-3">
-                  <li>
-                    <strong class="text-slate-300">Vision Pipeline Engineering:</strong> Developed high-velocity vision
-                    microservices mapping deep feature extractions from
-                    MobileNetV3 to optimized Scikit-Learn Logistic Regression classifiers, enabling rapid inference
-                    streams
-                    from web camera feeds without relying on GPU infrastructure.
-                  </li>
-                  <li>
-                    <strong class="text-slate-300">Asynchronous Software Architecture:</strong> Built robust, fully
-                    async backend foundations utilizing FastAPI,
-                    handling non-blocking database layers and implementing cryptographic token revocation via an async
-                    Redis caching layer.
-                  </li>
-                  <li>
-                    <strong class="text-slate-300">Incubator Collaboration:</strong> Collaborated closely with
-                    engineering leads to transition conceptual
-                    architectures into structured, production-grade logic while maintaining strict quality gates.
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- ===== LEADERSHIP ===== -->
-          <div id="leadership">
-            <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// IMPACT</p>
-            <h2 class="syne text-3xl md:text-4xl font-bold text-white mb-8">Leadership.</h2>
-
-            <div class="relative pl-8 border-l border-slate-800">
-
-              <!-- Entry 1: Adaption Labs Ambassador (Inaugural Cohort) -->
-              <div class="relative mb-12">
-                <div class="absolute w-3 h-3 rounded-full -left-[40px] top-1"
-                  style="background: var(--cyan); box-shadow: 0 0 0 0 rgba(34,211,238,0.5); animation: pulse-dot 2.5s ease-out infinite;">
-                </div>
-                <span class="mono text-xs text-cyan-400 tracking-wider mb-2 block">MAY 2026 – PRESENT</span>
-                <h4 class="syne text-white font-bold text-xl mb-1">Adaption Labs Ambassador <span
-                    class="mono text-sm text-slate-500 font-normal">(Inaugural Cohort)</span></h4>
-                <p class="text-purple-400 mono text-sm mb-4">Adaption Labs · Remote / Karachi, Pakistan</p>
-                <ul class="leadership-bullets space-y-2">
-                  <li>Selected as one of less than 5% of global applicants to the inaugural ambassador cohort to
-                    champion
-                    the mission of shifting developers from static paradigms toward adaptive, real-time AI systems.</li>
-                  <li>Spearheaded a localized AI builder ecosystem oriented around hands-on, open-source model
-                    development, actively steering participants away from static API wrapper dependency and toward
-                    direct
-                    engagement with model internals, efficiency optimization, and collaborative ML engineering.</li>
-                  <li>Scaled community technical depth by designing regional meetups, hackathons, and structured
-                    workshops
-                    covering PyTorch, transfer learning pipelines, and agentic system architectures.</li>
-                </ul>
-              </div>
-
-              <!-- Entry 2: Global Web3 & Diplomatic Exchanges -->
-              <div class="relative opacity-60">
-                <div class="absolute w-3 h-3 rounded-full bg-slate-600 -left-[40px] top-1"></div>
-                <span class="mono text-xs text-slate-500 tracking-wider mb-2 block">INTERNATIONAL</span>
-                <h4 class="syne text-white font-semibold text-lg mb-1">Global Web3 &amp; Diplomatic Exchanges</h4>
-                <p class="text-slate-500 mono text-sm mb-4">Various International Forums</p>
-                <p class="text-slate-500 text-sm leading-relaxed">
-                  Shaping dialogues around decentralized systems and international technical collaboration. Engaging
-                  stakeholders to drive innovation and technological adoption.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER / CONTACT -->
-  <footer id="contact" class="relative z-10 mt-24 border-t border-slate-800" role="contentinfo">
-    <div class="max-w-7xl mx-auto py-20 px-6 md:px-12 lg:px-24">
-
-      <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
-        <div>
-          <p class="mono text-xs text-cyan-400 mb-4 tracking-widest">// CONTACT</p>
-          <h2 class="syne text-4xl md:text-5xl font-bold text-white mb-6">Let's build<br><span
-              class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">something great.</span>
-          </h2>
-          <p class="text-slate-400 mb-8 max-w-md leading-relaxed">
-            Looking for an AI engineer, backend architect, or someone to help with your next project? I'm open to
-            freelance work and collaborations.
-          </p>
-          <a href="mailto:dogarasad277@gmail.com" class="btn-primary mb-8">
-            <i data-lucide="mail" class="w-4 h-4" aria-hidden="true"></i>
-            dogarasad277@gmail.com
-          </a>
-        </div>
-
-        <div class="grid grid-cols-2 gap-4">
-          <a href="https://github.com/Asadullah-Dogar" target="_blank" rel="noopener noreferrer"
-            class="glow-card p-6 flex items-center gap-4 no-underline group">
-            <div
-              class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 group-hover:bg-slate-700 transition-colors">
-              <i class="fab fa-github text-white text-xl" aria-hidden="true"></i>
-            </div>
-            <div>
-              <p class="syne text-white font-bold">GitHub</p>
-              <p class="mono text-xs text-slate-500">Asadullah-Dogar</p>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/asad-ullah-dogar/" target="_blank" rel="noopener noreferrer"
-            class="glow-card p-6 flex items-center gap-4 no-underline group">
-            <div
-              class="w-12 h-12 rounded-xl bg-blue-900/30 flex items-center justify-center shrink-0 group-hover:bg-blue-800/50 transition-colors">
-              <i class="fab fa-linkedin text-blue-400 text-xl" aria-hidden="true"></i>
-            </div>
-            <div>
-              <p class="syne text-white font-bold">LinkedIn</p>
-              <p class="mono text-xs text-slate-500">asad-ullah-dogar</p>
-            </div>
-          </a>
-          <a href="mailto:dogarasad277@gmail.com"
-            class="glow-card p-6 flex items-center gap-4 no-underline group col-span-2">
-            <div
-              class="w-12 h-12 rounded-xl bg-purple-900/30 flex items-center justify-center shrink-0 group-hover:bg-purple-800/50 transition-colors">
-              <i data-lucide="mail" class="w-6 h-6 text-purple-400" aria-hidden="true"></i>
-            </div>
-            <div>
-              <p class="syne text-white font-bold">Email</p>
-              <p class="mono text-xs text-slate-500">dogarasad277@gmail.com</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-        <a href="#home" class="syne text-lg font-bold text-white flex items-center gap-2">
-          <span
-            class="w-7 h-7 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black">A</span>
-          ASAD<span class="text-purple-500">.</span>DEV
+  <footer id="contact" class="mt-12 border-t border-slate-800 py-12 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="text-center md:text-left">
+        <h2 class="syne text-3xl font-bold text-white mb-4">Let's Build.</h2>
+        <a href="mailto:dogarasad277@gmail.com" class="text-cyan-400 hover:text-cyan-300 mono text-sm flex items-center gap-2 justify-center md:justify-start">
+          <i data-lucide="mail" class="w-4 h-4"></i> dogarasad277@gmail.com
         </a>
-        <p class="mono text-xs text-slate-600">© <span id="year"></span> Asad Ullah Dogar · Karachi, Pakistan 🇵🇰 · All
-          rights reserved.</p>
+      </div>
+      <div class="flex gap-4">
+        <a href="https://github.com/Asadullah-Dogar" class="p-3 bg-slate-900 rounded-lg hover:bg-slate-800 text-white"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/asad-ullah-dogar/" class="p-3 bg-slate-900 rounded-lg hover:bg-slate-800 text-blue-400"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
 
-  <!-- Scroll to top -->
-  <a href="#home" id="scroll-top"
-    class="hidden fixed bottom-8 right-8 w-12 h-12 bg-slate-900 border border-slate-700 rounded-full items-center justify-center text-slate-300 hover:text-white hover:bg-purple-600 hover:border-purple-600 transition-all z-50 shadow-xl focus:outline-none focus:ring-2 focus:ring-purple-500"
-    aria-label="Back to top">
-    <i data-lucide="chevron-up" class="w-5 h-5" aria-hidden="true"></i>
-  </a>
-
   <script>
-    // Lucide icons
-    function reinitIcons() {
-      if (typeof lucide !== 'undefined') lucide.createIcons();
-    }
-    document.addEventListener('DOMContentLoaded', reinitIcons);
-    window.addEventListener('load', reinitIcons);
-
-    // Navbar scroll effect
-    const nav = document.getElementById('navbar');
-    const scrollTop = document.getElementById('scroll-top');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        nav.classList.add('scrolled');
-        scrollTop.classList.remove('hidden');
-        scrollTop.classList.add('flex');
-      } else {
-        nav.classList.remove('scrolled');
-        scrollTop.classList.add('hidden');
-        scrollTop.classList.remove('flex');
-      }
-    });
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    let open = false;
-    menuBtn.addEventListener('click', () => {
-      open = !open;
-      menuBtn.setAttribute('aria-expanded', open);
-      mobileMenu.classList.toggle('hidden', !open);
-      mobileMenu.classList.toggle('flex', open);
-      menuBtn.innerHTML = open
-        ? '<i data-lucide="x" class="w-5 h-5"></i>'
-        : '<i data-lucide="menu" class="w-5 h-5"></i>';
-      reinitIcons();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && open) menuBtn.click();
-    });
-    document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { if (open) menuBtn.click(); }));
-
-    // Intersection observer for fade-up
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+    
+    // Intersection observer for animations
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
@@ -1327,47 +436,26 @@
     }, { threshold: 0.08 });
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-    // Automated year counter
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Builder grid removed (section deleted)
-
-    // Certifications data
+    // Dynamic Certifications Load
     const certs = [
-      { name: 'Python for Everybody', issuer: 'Coursera / UMich', year: '2023' },
-      { name: 'Machine Learning Specialization', issuer: 'Coursera / DeepLearning.AI', year: '2023' },
-      { name: 'Deep Learning Specialization', issuer: 'DeepLearning.AI', year: '2024' },
-      { name: 'TensorFlow Developer', issuer: 'DeepLearning.AI', year: '2024' },
-      { name: 'Natural Language Processing', issuer: 'DeepLearning.AI', year: '2024' },
-      { name: 'MLOps Fundamentals', issuer: 'Google Cloud', year: '2024' },
-      { name: 'AWS Cloud Practitioner', issuer: 'AWS / Udemy', year: '2024' },
-      { name: 'Docker & Kubernetes', issuer: 'Udemy', year: '2024' },
-      { name: 'FastAPI – The Complete Course', issuer: 'Udemy', year: '2024' },
-      { name: 'Data Structures & Algorithms', issuer: 'Coursera', year: '2023' },
-      { name: 'Web Scraping with Python', issuer: 'Udemy', year: '2023' },
-      { name: 'PostgreSQL Bootcamp', issuer: 'Udemy', year: '2024' },
-      { name: 'Git & GitHub Mastery', issuer: 'Udemy', year: '2023' },
-      { name: 'React – The Complete Guide', issuer: 'Udemy', year: '2024' },
-      { name: 'LangChain & Vector Databases', issuer: 'Activeloop', year: '2024' },
-      { name: 'Prompt Engineering for Devs', issuer: 'DeepLearning.AI', year: '2024' },
-      { name: 'Computer Vision with PyTorch', issuer: 'Fast.ai', year: '2024' },
-      { name: 'Generative AI with LLMs', issuer: 'Coursera / AWS', year: '2025' },
-      { name: 'Linux Command Line Essentials', issuer: 'Udemy', year: '2023' },
-      { name: 'System Design Fundamentals', issuer: 'Educative.io', year: '2025' },
+      { name: 'AWS Certified AI Practitioner', issuer: 'AWS' },
+      { name: 'Generative AI with LLMs', issuer: 'Coursera / AWS' },
+      { name: 'Agentic AI Systems', issuer: '365 Data Science' },
+      { name: 'System Design Fundamentals', issuer: 'Educative.io' },
+      { name: 'Deep Learning Specialization', issuer: 'DeepLearning.AI' },
+      { name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI' },
+      { name: 'LangChain & Vector Databases', issuer: 'Activeloop' },
+      { name: 'FastAPI – The Complete Course', issuer: 'Udemy' },
+      { name: 'Docker & Kubernetes', issuer: 'Udemy' }
     ];
 
     const certGrid = document.getElementById('cert-grid');
     certs.forEach(c => {
       const el = document.createElement('div');
-      el.className = 'p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-700 transition-colors';
-      el.innerHTML = `
-        <p class="syne text-white text-xs font-bold leading-snug mb-1">${c.name}</p>
-        <p class="mono text-slate-600" style="font-size:10px;">${c.issuer} · ${c.year}</p>
-      `;
+      el.className = 'p-3 rounded-xl border border-slate-800 bg-slate-900/40 hover:border-slate-700';
+      el.innerHTML = `<p class="syne text-white text-xs font-bold mb-1">${c.name}</p><p class="mono text-slate-500 text-[10px]">${c.issuer}</p>`;
       certGrid.appendChild(el);
     });
   </script>
-
 </body>
-
 </html>
